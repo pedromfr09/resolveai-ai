@@ -1,0 +1,105 @@
+{
+  "name": "ResolveAI | Triage API → Human-review digest (manual demo)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-resolveai",
+      "name": "Run demo manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const tickets = [{ticket_id:'DEMO-001',text:'Meu pedido está atrasado há 3 horas'},{ticket_id:'DEMO-002',text:'Fui cobrado duas vezes pelo mesmo pedido'},{ticket_id:'DEMO-003',text:'Tive reação alérgica e fui ao hospital após comer'},{ticket_id:'DEMO-004',text:'Não consigo entrar na minha conta'}]; return tickets.map(ticket => ({json: ticket}));"
+      },
+      "id": "create-resolveai",
+      "name": "Synthetic input: 4 tickets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        470,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8001/triage",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "http-resolveai",
+      "name": "POST ResolveAI API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        730,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const rows = $input.all().map(x => x.json); const escalated = rows.filter(x => x.requires_human_review).map(x => ({ticket_id:x.ticket_id,priority:x.priority,team:x.team,reason:x.reason_code})); return [{json:{demo_only:true,total_processed:rows.length,escalated_count:escalated.length,escalated:escalated,priority_counts:rows.reduce((a,x)=>(a[x.priority]=(a[x.priority]||0)+1,a),{}),message:'Review queue generated - no outbound notifications or real customer actions'}}];"
+      },
+      "id": "digest-resolveai",
+      "name": "Generate review digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        980,
+        280
+      ]
+    }
+  ],
+  "connections": {
+    "Run demo manually": {
+      "main": [
+        [
+          {
+            "node": "Synthetic input: 4 tickets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Synthetic input: 4 tickets": {
+      "main": [
+        [
+          {
+            "node": "POST ResolveAI API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST ResolveAI API": {
+      "main": [
+        [
+          {
+            "node": "Generate review digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

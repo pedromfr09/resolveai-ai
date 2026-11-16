@@ -1,0 +1,33 @@
+[
+  {
+    "demo_only": true,
+    "total_processed": 4,
+    "escalated_count": 3,
+    "escalated": [
+      {
+        "ticket_id": "DEMO-001",
+        "priority": "alta",
+        "team": "operacoes_entrega",
+        "reason": "atraso_prolongado"
+      },
+      {
+        "ticket_id": "DEMO-002",
+        "priority": "alta",
+        "team": "suporte_pagamentos",
+        "reason": "possivel_fraude_ou_seguranca_financeira"
+      },
+      {
+        "ticket_id": "DEMO-003",
+        "priority": "critica",
+        "team": "suporte_qualidade",
+        "reason": "sinal_de_risco_a_saude"
+      }
+    ],
+    "priority_counts": {
+      "alta": 2,
+      "critica": 1,
+      "media": 1
+    },
+    "message": "Review queue generated - no outbound notifications or real customer actions"
+  }
+]

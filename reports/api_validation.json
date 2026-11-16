@@ -1,0 +1,638 @@
+{
+  "validated_at_utc": "2026-11-16T22:43:02.778457+00:00",
+  "python_version": "3.12.15",
+  "base_url": "http://127.0.0.1:8001",
+  "transport": "real_http",
+  "passed": true,
+  "workflow_input_api_only": {
+    "total_processed": 4,
+    "escalated_count": 3
+  },
+  "n8n_executed": false,
+  "anthropic_called": false,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "request": null,
+      "status_code": 200,
+      "response": {
+        "status": "ok",
+        "service": "resolveai",
+        "mode": "local_rules"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/demo",
+      "request": null,
+      "status_code": 200,
+      "response": {
+        "source": "synthetic_examples",
+        "results": [
+          {
+            "ticket_id": "T001",
+            "category": "entrega_atrasada",
+            "priority": "alta",
+            "team": "operacoes_entrega",
+            "requires_human_review": true,
+            "suggested_sla_hours": 2,
+            "reason_code": "atraso_prolongado",
+            "suggested_reply_draft": "Recebemos o relato de atraso. Vamos verificar o status do pedido antes de confirmar os próximos passos.",
+            "policy_reference": {
+              "category": "entrega_atrasada",
+              "guidance": "Verificar status e histórico do pedido; não prometer prazo sem confirmação.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 2,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 0,
+                "acesso_conta": 0
+              },
+              "health_risk": false,
+              "security_risk": false,
+              "charge_risk": false,
+              "severe_delay": true
+            },
+            "redacted_excerpt": "O pedido está atrasado há três horas e ainda não chegou.",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "T002",
+            "category": "cobranca",
+            "priority": "alta",
+            "team": "suporte_pagamentos",
+            "requires_human_review": true,
+            "suggested_sla_hours": 2,
+            "reason_code": "possivel_fraude_ou_seguranca_financeira",
+            "suggested_reply_draft": "Recebemos seu relato sobre uma cobrança. A equipe de pagamentos verificará a transação com segurança.",
+            "policy_reference": {
+              "category": "cobranca",
+              "guidance": "Conferir transação em canal seguro; nunca solicitar cartão completo ou senha.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 1,
+                "qualidade_alimento": 0,
+                "acesso_conta": 0
+              },
+              "health_risk": false,
+              "security_risk": false,
+              "charge_risk": true,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Fui cobrado duas vezes pelo mesmo pedido e quero orientação.",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "T003",
+            "category": "qualidade_alimento",
+            "priority": "critica",
+            "team": "suporte_qualidade",
+            "requires_human_review": true,
+            "suggested_sla_hours": 1,
+            "reason_code": "sinal_de_risco_a_saude",
+            "suggested_reply_draft": "Registramos seu relato sobre a qualidade do pedido. Nossa equipe fará a análise e orientará os próximos passos.",
+            "policy_reference": {
+              "category": "qualidade_alimento",
+              "guidance": "Reunir evidências e encaminhar risco à saúde imediatamente para revisão humana.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 2,
+                "acesso_conta": 0
+              },
+              "health_risk": true,
+              "security_risk": false,
+              "charge_risk": false,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Comi o pedido e tive reação alérgica, precisei ir ao hospital.",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "T004",
+            "category": "acesso_conta",
+            "priority": "alta",
+            "team": "seguranca_conta",
+            "requires_human_review": true,
+            "suggested_sla_hours": 2,
+            "reason_code": "possivel_fraude_ou_seguranca_financeira",
+            "suggested_reply_draft": "Registramos a dificuldade com a conta. Para sua segurança, a equipe responsável verificará o caso.",
+            "policy_reference": {
+              "category": "acesso_conta",
+              "guidance": "Encaminhar suspeita de invasão para time especializado; nunca pedir senhas ou códigos.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 0,
+                "acesso_conta": 2
+              },
+              "health_risk": false,
+              "security_risk": true,
+              "charge_risk": false,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Minha conta foi invadida e não reconheço a compra realizada.",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "DEMO-001",
+        "text": "Meu pedido está atrasado há 3 horas"
+      },
+      "status_code": 200,
+      "response": {
+        "ticket_id": "DEMO-001",
+        "category": "entrega_atrasada",
+        "priority": "alta",
+        "team": "operacoes_entrega",
+        "requires_human_review": true,
+        "suggested_sla_hours": 2,
+        "reason_code": "atraso_prolongado",
+        "suggested_reply_draft": "Recebemos o relato de atraso. Vamos verificar o status do pedido antes de confirmar os próximos passos.",
+        "policy_reference": {
+          "category": "entrega_atrasada",
+          "guidance": "Verificar status e histórico do pedido; não prometer prazo sem confirmação.",
+          "source": "politicas_ficticias_demo"
+        },
+        "evidence": {
+          "rule_scores": {
+            "entrega_atrasada": 1,
+            "reembolso": 0,
+            "cobranca": 0,
+            "qualidade_alimento": 0,
+            "acesso_conta": 0
+          },
+          "health_risk": false,
+          "security_risk": false,
+          "charge_risk": false,
+          "severe_delay": true
+        },
+        "redacted_excerpt": "Meu pedido está atrasado há 3 horas",
+        "actions_executed": [
+          "classify",
+          "lookup_policy",
+          "apply_risk_gates",
+          "route"
+        ],
+        "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "DEMO-002",
+        "text": "Fui cobrado duas vezes pelo mesmo pedido"
+      },
+      "status_code": 200,
+      "response": {
+        "ticket_id": "DEMO-002",
+        "category": "cobranca",
+        "priority": "alta",
+        "team": "suporte_pagamentos",
+        "requires_human_review": true,
+        "suggested_sla_hours": 2,
+        "reason_code": "possivel_fraude_ou_seguranca_financeira",
+        "suggested_reply_draft": "Recebemos seu relato sobre uma cobrança. A equipe de pagamentos verificará a transação com segurança.",
+        "policy_reference": {
+          "category": "cobranca",
+          "guidance": "Conferir transação em canal seguro; nunca solicitar cartão completo ou senha.",
+          "source": "politicas_ficticias_demo"
+        },
+        "evidence": {
+          "rule_scores": {
+            "entrega_atrasada": 0,
+            "reembolso": 0,
+            "cobranca": 1,
+            "qualidade_alimento": 0,
+            "acesso_conta": 0
+          },
+          "health_risk": false,
+          "security_risk": false,
+          "charge_risk": true,
+          "severe_delay": false
+        },
+        "redacted_excerpt": "Fui cobrado duas vezes pelo mesmo pedido",
+        "actions_executed": [
+          "classify",
+          "lookup_policy",
+          "apply_risk_gates",
+          "route"
+        ],
+        "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "DEMO-003",
+        "text": "Tive reação alérgica e fui ao hospital após comer"
+      },
+      "status_code": 200,
+      "response": {
+        "ticket_id": "DEMO-003",
+        "category": "qualidade_alimento",
+        "priority": "critica",
+        "team": "suporte_qualidade",
+        "requires_human_review": true,
+        "suggested_sla_hours": 1,
+        "reason_code": "sinal_de_risco_a_saude",
+        "suggested_reply_draft": "Registramos seu relato sobre a qualidade do pedido. Nossa equipe fará a análise e orientará os próximos passos.",
+        "policy_reference": {
+          "category": "qualidade_alimento",
+          "guidance": "Reunir evidências e encaminhar risco à saúde imediatamente para revisão humana.",
+          "source": "politicas_ficticias_demo"
+        },
+        "evidence": {
+          "rule_scores": {
+            "entrega_atrasada": 0,
+            "reembolso": 0,
+            "cobranca": 0,
+            "qualidade_alimento": 2,
+            "acesso_conta": 0
+          },
+          "health_risk": true,
+          "security_risk": false,
+          "charge_risk": false,
+          "severe_delay": false
+        },
+        "redacted_excerpt": "Tive reação alérgica e fui ao hospital após comer",
+        "actions_executed": [
+          "classify",
+          "lookup_policy",
+          "apply_risk_gates",
+          "route"
+        ],
+        "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "DEMO-004",
+        "text": "Não consigo entrar na minha conta"
+      },
+      "status_code": 200,
+      "response": {
+        "ticket_id": "DEMO-004",
+        "category": "acesso_conta",
+        "priority": "media",
+        "team": "seguranca_conta",
+        "requires_human_review": false,
+        "suggested_sla_hours": 2,
+        "reason_code": "revisao_ou_verificacao_necessaria",
+        "suggested_reply_draft": "Registramos a dificuldade com a conta. Para sua segurança, a equipe responsável verificará o caso.",
+        "policy_reference": {
+          "category": "acesso_conta",
+          "guidance": "Encaminhar suspeita de invasão para time especializado; nunca pedir senhas ou códigos.",
+          "source": "politicas_ficticias_demo"
+        },
+        "evidence": {
+          "rule_scores": {
+            "entrega_atrasada": 0,
+            "reembolso": 0,
+            "cobranca": 0,
+            "qualidade_alimento": 0,
+            "acesso_conta": 2
+          },
+          "health_risk": false,
+          "security_risk": false,
+          "charge_risk": false,
+          "severe_delay": false
+        },
+        "redacted_excerpt": "Não consigo entrar na minha conta",
+        "actions_executed": [
+          "classify",
+          "lookup_policy",
+          "apply_risk_gates",
+          "route"
+        ],
+        "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage/batch",
+      "request": {
+        "tickets": [
+          {
+            "ticket_id": "DEMO-001",
+            "text": "Meu pedido está atrasado há 3 horas"
+          },
+          {
+            "ticket_id": "DEMO-002",
+            "text": "Fui cobrado duas vezes pelo mesmo pedido"
+          },
+          {
+            "ticket_id": "DEMO-003",
+            "text": "Tive reação alérgica e fui ao hospital após comer"
+          },
+          {
+            "ticket_id": "DEMO-004",
+            "text": "Não consigo entrar na minha conta"
+          }
+        ]
+      },
+      "status_code": 200,
+      "response": {
+        "total": 4,
+        "needs_review": 3,
+        "results": [
+          {
+            "ticket_id": "DEMO-001",
+            "category": "entrega_atrasada",
+            "priority": "alta",
+            "team": "operacoes_entrega",
+            "requires_human_review": true,
+            "suggested_sla_hours": 2,
+            "reason_code": "atraso_prolongado",
+            "suggested_reply_draft": "Recebemos o relato de atraso. Vamos verificar o status do pedido antes de confirmar os próximos passos.",
+            "policy_reference": {
+              "category": "entrega_atrasada",
+              "guidance": "Verificar status e histórico do pedido; não prometer prazo sem confirmação.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 1,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 0,
+                "acesso_conta": 0
+              },
+              "health_risk": false,
+              "security_risk": false,
+              "charge_risk": false,
+              "severe_delay": true
+            },
+            "redacted_excerpt": "Meu pedido está atrasado há 3 horas",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "DEMO-002",
+            "category": "cobranca",
+            "priority": "alta",
+            "team": "suporte_pagamentos",
+            "requires_human_review": true,
+            "suggested_sla_hours": 2,
+            "reason_code": "possivel_fraude_ou_seguranca_financeira",
+            "suggested_reply_draft": "Recebemos seu relato sobre uma cobrança. A equipe de pagamentos verificará a transação com segurança.",
+            "policy_reference": {
+              "category": "cobranca",
+              "guidance": "Conferir transação em canal seguro; nunca solicitar cartão completo ou senha.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 1,
+                "qualidade_alimento": 0,
+                "acesso_conta": 0
+              },
+              "health_risk": false,
+              "security_risk": false,
+              "charge_risk": true,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Fui cobrado duas vezes pelo mesmo pedido",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "DEMO-003",
+            "category": "qualidade_alimento",
+            "priority": "critica",
+            "team": "suporte_qualidade",
+            "requires_human_review": true,
+            "suggested_sla_hours": 1,
+            "reason_code": "sinal_de_risco_a_saude",
+            "suggested_reply_draft": "Registramos seu relato sobre a qualidade do pedido. Nossa equipe fará a análise e orientará os próximos passos.",
+            "policy_reference": {
+              "category": "qualidade_alimento",
+              "guidance": "Reunir evidências e encaminhar risco à saúde imediatamente para revisão humana.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 2,
+                "acesso_conta": 0
+              },
+              "health_risk": true,
+              "security_risk": false,
+              "charge_risk": false,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Tive reação alérgica e fui ao hospital após comer",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          },
+          {
+            "ticket_id": "DEMO-004",
+            "category": "acesso_conta",
+            "priority": "media",
+            "team": "seguranca_conta",
+            "requires_human_review": false,
+            "suggested_sla_hours": 2,
+            "reason_code": "revisao_ou_verificacao_necessaria",
+            "suggested_reply_draft": "Registramos a dificuldade com a conta. Para sua segurança, a equipe responsável verificará o caso.",
+            "policy_reference": {
+              "category": "acesso_conta",
+              "guidance": "Encaminhar suspeita de invasão para time especializado; nunca pedir senhas ou códigos.",
+              "source": "politicas_ficticias_demo"
+            },
+            "evidence": {
+              "rule_scores": {
+                "entrega_atrasada": 0,
+                "reembolso": 0,
+                "cobranca": 0,
+                "qualidade_alimento": 0,
+                "acesso_conta": 2
+              },
+              "health_risk": false,
+              "security_risk": false,
+              "charge_risk": false,
+              "severe_delay": false
+            },
+            "redacted_excerpt": "Não consigo entrar na minha conta",
+            "actions_executed": [
+              "classify",
+              "lookup_policy",
+              "apply_risk_gates",
+              "route"
+            ],
+            "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "SECURITY-001",
+        "text": "Minha conta foi invadida e não reconheço o acesso"
+      },
+      "status_code": 200,
+      "response": {
+        "ticket_id": "SECURITY-001",
+        "category": "acesso_conta",
+        "priority": "alta",
+        "team": "seguranca_conta",
+        "requires_human_review": true,
+        "suggested_sla_hours": 2,
+        "reason_code": "possivel_fraude_ou_seguranca_financeira",
+        "suggested_reply_draft": "Registramos a dificuldade com a conta. Para sua segurança, a equipe responsável verificará o caso.",
+        "policy_reference": {
+          "category": "acesso_conta",
+          "guidance": "Encaminhar suspeita de invasão para time especializado; nunca pedir senhas ou códigos.",
+          "source": "politicas_ficticias_demo"
+        },
+        "evidence": {
+          "rule_scores": {
+            "entrega_atrasada": 0,
+            "reembolso": 0,
+            "cobranca": 0,
+            "qualidade_alimento": 0,
+            "acesso_conta": 3
+          },
+          "health_risk": false,
+          "security_risk": true,
+          "charge_risk": false,
+          "severe_delay": false
+        },
+        "redacted_excerpt": "Minha conta foi invadida e não reconheço o acesso",
+        "actions_executed": [
+          "classify",
+          "lookup_policy",
+          "apply_risk_gates",
+          "route"
+        ],
+        "disclaimer": "DEMONSTRACAO: dados e politicas ficticias. Nao envia mensagens nem executa reembolsos."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage/batch",
+      "request": {
+        "tickets": [
+          {
+            "ticket_id": "DEMO-001",
+            "text": "Meu pedido está atrasado há 3 horas"
+          },
+          {
+            "ticket_id": "DEMO-001",
+            "text": "Meu pedido está atrasado há 3 horas"
+          }
+        ]
+      },
+      "status_code": 422,
+      "response": {
+        "detail": "ticket_id duplicado no lote"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/triage",
+      "request": {
+        "ticket_id": "invalid id",
+        "text": "Oi"
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "string_pattern_mismatch",
+            "loc": [
+              "body",
+              "ticket_id"
+            ],
+            "msg": "String should match pattern '^[a-zA-Z0-9_-]+$'",
+            "input": "invalid id",
+            "ctx": {
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            }
+          },
+          {
+            "type": "string_too_short",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "String should have at least 10 characters",
+            "input": "Oi",
+            "ctx": {
+              "min_length": 10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

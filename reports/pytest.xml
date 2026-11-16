@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="pytest tests">
+  <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="27" time="0.723" timestamp="2026-11-16T20:38:27.247108-03:00">
+    <testcase classname="tests.test_agent" name="test_agent_tool_loop_with_fake_llm" time="0.003" />
+    <testcase classname="tests.test_api" name="test_health" time="0.012" />
+    <testcase classname="tests.test_api" name="test_demo" time="0.007" />
+    <testcase classname="tests.test_api" name="test_policy" time="0.005" />
+    <testcase classname="tests.test_api" name="test_triage" time="0.006" />
+    <testcase classname="tests.test_api" name="test_batch" time="0.005" />
+    <testcase classname="tests.test_api" name="test_duplicate_ticket" time="0.005" />
+    <testcase classname="tests.test_api" name="test_invalid_text_and_id" time="0.006" />
+    <testcase classname="tests.test_api" name="test_llm_off_by_default" time="0.006" />
+    <testcase classname="tests.test_core" name="test_category[O entregador est\xe1 atrasado h\xe1 horas-entrega_atrasada]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[Preciso de reembolso pelo meu pedido-reembolso]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[Fizeram uma cobran\xe7a duplicada-cobranca]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[A comida chegou estragada-qualidade_alimento]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[N\xe3o consigo fazer login na minha conta-acesso_conta]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[Quero informa\xe7\xf5es gerais-outros]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[Passei mal e fui ao hospital depois da refei\xe7\xe3o-qualidade_alimento]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_category[Quero o estorno de uma cobran\xe7a que n\xe3o reconhe\xe7o-cobranca]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_health_risk_requires_review" time="0.000" />
+    <testcase classname="tests.test_core" name="test_unusual_taste_routes_to_quality" time="0.001" />
+    <testcase classname="tests.test_core" name="test_health_signal_without_category_keyword[Passei mal depois de consumir o pedido]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_health_signal_without_category_keyword[Desmaiei depois de comer]" time="0.001" />
+    <testcase classname="tests.test_core" name="test_fraud_requires_review" time="0.000" />
+    <testcase classname="tests.test_core" name="test_ordinary_delay_without_review" time="0.001" />
+    <testcase classname="tests.test_core" name="test_unknown_requires_review" time="0.001" />
+    <testcase classname="tests.test_core" name="test_redact_email_phone_card" time="0.001" />
+    <testcase classname="tests.test_core" name="test_policy_has_no_business_actions" time="0.000" />
+    <testcase classname="tests.test_evals" name="test_evaluation_is_reproducible" time="0.004" />
+  </testsuite>
+</testsuites>

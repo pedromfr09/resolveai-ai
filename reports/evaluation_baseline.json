@@ -1,0 +1,45 @@
+{
+  "dataset": "tickets_labeled.jsonl",
+  "source": "curated_synthetic_examples",
+  "sample_size": 42,
+  "category_accuracy": 1.0,
+  "priority_accuracy": 1.0,
+  "high_priority_recall": 1.0,
+  "human_review_recall": 1.0,
+  "elapsed_ms_total": 4.172,
+  "mean_ms_per_ticket": 0.099,
+  "confusion_matrix": [
+    {
+      "expected": "acesso_conta",
+      "predicted": "acesso_conta",
+      "count": 7
+    },
+    {
+      "expected": "cobranca",
+      "predicted": "cobranca",
+      "count": 7
+    },
+    {
+      "expected": "entrega_atrasada",
+      "predicted": "entrega_atrasada",
+      "count": 7
+    },
+    {
+      "expected": "outros",
+      "predicted": "outros",
+      "count": 7
+    },
+    {
+      "expected": "qualidade_alimento",
+      "predicted": "qualidade_alimento",
+      "count": 8
+    },
+    {
+      "expected": "reembolso",
+      "predicted": "reembolso",
+      "count": 6
+    }
+  ],
+  "mismatches": [],
+  "caveat": "Métricas locais em dados sintéticos construídos para validar o MVP. Não representam performance em produção, nem avaliação da LLM."
+}

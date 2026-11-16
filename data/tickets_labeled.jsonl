@@ -1,0 +1,42 @@
+{"ticket_id": "SYN001", "text": "Meu pedido está atrasado vinte minutos", "expected_category": "entrega_atrasada", "expected_priority": "baixa", "requires_human_review": false}
+{"ticket_id": "SYN002", "text": "Entregador ainda não chegou com o pedido", "expected_category": "entrega_atrasada", "expected_priority": "baixa", "requires_human_review": false}
+{"ticket_id": "SYN003", "text": "A entrega demorou mais do que o combinado", "expected_category": "entrega_atrasada", "expected_priority": "baixa", "requires_human_review": false}
+{"ticket_id": "SYN004", "text": "Estou esperando meu pedido desde ontem", "expected_category": "entrega_atrasada", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN005", "text": "O pedido está atrasado há 3 horas", "expected_category": "entrega_atrasada", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN006", "text": "Minha entrega está atrasada desde o almoço", "expected_category": "entrega_atrasada", "expected_priority": "baixa", "requires_human_review": false}
+{"ticket_id": "SYN007", "text": "O pedido aparece pendente e não foi entregue", "expected_category": "entrega_atrasada", "expected_priority": "baixa", "requires_human_review": false}
+{"ticket_id": "SYN008", "text": "Gostaria de solicitar reembolso do valor pago", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN009", "text": "Quando vou receber meu estorno?", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN010", "text": "Quero meu dinheiro de volta pelo pedido", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN011", "text": "Preciso do reembolso da compra cancelada", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN012", "text": "Qual é o andamento da devolução do dinheiro?", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN013", "text": "Solicitei estorno e ainda não obtive resposta", "expected_category": "reembolso", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN014", "text": "O aplicativo registrou uma cobrança duplicada", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN015", "text": "Paguei duas vezes pelo mesmo pedido", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN016", "text": "Há um valor indevido na minha fatura", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN017", "text": "Meu cartão foi cobrado em duplicidade", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN018", "text": "Existe cobrança indevida na compra", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN019", "text": "Não reconheço uma cobrança na fatura", "expected_category": "cobranca", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN020", "text": "Gostaria de consultar a cobrança da taxa", "expected_category": "cobranca", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN021", "text": "A comida chegou completamente fria", "expected_category": "qualidade_alimento", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN022", "text": "A refeição estava estragada", "expected_category": "qualidade_alimento", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN023", "text": "O alimento veio cru", "expected_category": "qualidade_alimento", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN024", "text": "A embalagem estava aberta e a comida derramada", "expected_category": "qualidade_alimento", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN025", "text": "Tive reação alérgica após comer o pedido", "expected_category": "qualidade_alimento", "expected_priority": "critica", "requires_human_review": true}
+{"ticket_id": "SYN026", "text": "Fui ao hospital com intoxicação depois da refeição", "expected_category": "qualidade_alimento", "expected_priority": "critica", "requires_human_review": true}
+{"ticket_id": "SYN027", "text": "Encontrei vidro na comida", "expected_category": "qualidade_alimento", "expected_priority": "critica", "requires_human_review": true}
+{"ticket_id": "SYN028", "text": "O alimento chegou contaminado", "expected_category": "qualidade_alimento", "expected_priority": "critica", "requires_human_review": true}
+{"ticket_id": "SYN029", "text": "Não consigo acessar minha conta", "expected_category": "acesso_conta", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN030", "text": "Esqueci a senha e não consigo entrar", "expected_category": "acesso_conta", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN031", "text": "O login está bloqueado", "expected_category": "acesso_conta", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN032", "text": "Minha conta foi invadida", "expected_category": "acesso_conta", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN033", "text": "Hackearam minha conta e trocaram o acesso", "expected_category": "acesso_conta", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN034", "text": "Não reconheço o acesso registrado na conta", "expected_category": "acesso_conta", "expected_priority": "alta", "requires_human_review": true}
+{"ticket_id": "SYN035", "text": "Quero mudar a senha da conta", "expected_category": "acesso_conta", "expected_priority": "media", "requires_human_review": false}
+{"ticket_id": "SYN036", "text": "Qual o horário de atendimento do suporte?", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN037", "text": "Gostaria de esclarecer uma dúvida sobre o aplicativo", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN038", "text": "Tenho uma sugestão para a interface", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN039", "text": "Onde encontro o termo de uso?", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN040", "text": "Quero falar sobre uma funcionalidade nova", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN041", "text": "Preciso de orientação sobre algo diferente", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}
+{"ticket_id": "SYN042", "text": "Gostaria de enviar um elogio ao suporte", "expected_category": "outros", "expected_priority": "media", "requires_human_review": true}

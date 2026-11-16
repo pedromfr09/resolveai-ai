@@ -1,0 +1,8 @@
+{"ticket_id":"CH001","text":"Recebi o prato sem a bebida que comprei.","expected_category":"qualidade_alimento","expected_priority":"media","requires_human_review":false}
+{"ticket_id":"CH002","text":"Meu pedido levou quatro horas para chegar.","expected_category":"entrega_atrasada","expected_priority":"alta","requires_human_review":true}
+{"ticket_id":"CH003","text":"Preciso de ajuda para entrar: o aplicativo exibe erro na autenticação.","expected_category":"acesso_conta","expected_priority":"media","requires_human_review":false}
+{"ticket_id":"CH004","text":"Tenho uma compra não autorizada no meu perfil.","expected_category":"cobranca","expected_priority":"alta","requires_human_review":true}
+{"ticket_id":"CH005","text":"Paguei a taxa, mas o meu login não funciona.","expected_category":"acesso_conta","expected_priority":"media","requires_human_review":false}
+{"ticket_id":"CH006","text":"O pedido chegou, mas faltou um item na sacola.","expected_category":"qualidade_alimento","expected_priority":"media","requires_human_review":false}
+{"ticket_id":"CH007","text":"O entregador aparece parado no mapa, pedido sem atualização.","expected_category":"entrega_atrasada","expected_priority":"baixa","requires_human_review":false}
+{"ticket_id":"CH008","text":"Quero informar que o produto estava com gosto estranho.","expected_category":"qualidade_alimento","expected_priority":"media","requires_human_review":false}
