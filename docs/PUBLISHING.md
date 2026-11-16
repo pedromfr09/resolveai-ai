@@ -1,35 +1,23 @@
 # Publicação do ResolveAI
 
-Destino planejado: `pedromfr09/resolveai-ai`, repositório público, branch `main`. A preparação local não comprova publicação; primeiro push depende da aprovação do proprietário.
+**Status em 16/11/2026:** repositório público publicado em [pedromfr09/resolveai-ai](https://github.com/pedromfr09/resolveai-ai), branch `main`, commit inicial [`a1025b1`](https://github.com/pedromfr09/resolveai-ai/commit/a1025b17ccefb8391bc2e1f5edf8b075741c2689). A [suíte CI](https://github.com/pedromfr09/resolveai-ai/actions/runs/43981829098) concluiu com sucesso.
 
-## Criar o repositório vazio
+## GitHub Pages — ativação pendente
 
-GitHub CLI não foi encontrado neste ambiente. A conta conectada pelo conector é `pedromfr09`, mas o conector disponível não possui comando de criação de repositório.
+O site ainda **não está ativo**. Para ativá-lo:
 
-1. Entre em [github.com/new](https://github.com/new).
-2. Em **Owner**, escolha **pedromfr09**; em **Repository name**, escreva **resolveai-ai**.
-3. Descrição sugerida: `Triagem auditável com FastAPI, regras determinísticas, evals sintéticos e automação n8n validada.`
-4. Selecione **Public**. Deixe desmarcada a criação de README, `.gitignore` e licença, pois os arquivos locais serão enviados no primeiro push.
-5. Clique **Create repository**. A criação vazia não envia o projeto local.
-
-Após a aprovação explícita do primeiro push, envie a branch local `main` para `https://github.com/pedromfr09/resolveai-ai.git`. Autenticação Git pode exigir que o proprietário entre na conta; não inclua tokens na URL nem em arquivos.
-
-## Ativar GitHub Pages
-
-Depois que `main` estiver publicada:
-
-1. No repositório, clique **Settings → Pages**.
+1. Abra [Settings → Pages](https://github.com/pedromfr09/resolveai-ai/settings/pages).
 2. Em **Build and deployment → Source**, escolha **Deploy from a branch**.
-3. Em **Branch**, selecione **main**; na pasta, escolha **/(root)**.
-4. Clique **Save** e acompanhe o deploy na aba **Actions**.
-5. Abra a URL informada pelo GitHub. Endereço esperado, somente após deploy bem-sucedido: `https://pedromfr09.github.io/resolveai-ai/`.
+3. Selecione a branch **main**, a pasta **/(root)** e clique em **Save**.
+4. Verifique a execução de publicação em [Actions](https://github.com/pedromfr09/resolveai-ai/actions).
+5. Depois de o GitHub confirmar o deploy, abra **https://pedromfr09.github.io/resolveai-ai/**.
 
-O `index.html` está na raiz e usa CSS, JavaScript e snapshots embutidos, sem requisições à FastAPI, n8n, CDN ou LLM. O arquivo `.nojekyll` permite servir os arquivos estáticos sem processamento Jekyll. Pages **não executa API ou workflow n8n**.
+O arquivo `index.html` está na raiz e contém CSS, JavaScript e exemplos de triagem pré-calculados, sem chamadas à FastAPI, n8n, CDN ou LLM. O `.nojekyll` impede processamento Jekyll. **Pages não executa a API nem o workflow n8n.**
 
-## Conteúdo e evidências
+## O que foi publicado
 
-Publicar código, testes, dados sintéticos, workflows importáveis, README, documentos e evidências sanitizadas. Não publicar `.venv`, `.env`, `.local-tools`, `.npm-cache`, `.n8n-local`, bancos, logs privados ou arquivos temporários. A pasta n8n contém dados da conta e chaves; o log bruto da CLI contém tokens internos. Esses arquivos permanecem somente na máquina, ignorados pelo Git.
+Código, testes, datasets sintéticos, dois workflows n8n importáveis, README, documentos, resultados sanitizados e capturas. Os registros brutos, `.venv`, `.env`, `.local-tools`, `.npm-cache`, `.n8n-local`, bancos e arquivos privados continuam fora do Git.
 
-Confira [API/testes/evals](PHASE1_2_VALIDATION.md), [execução n8n](N8N_VALIDATION.md) e [relatório pré-publicação](PREPUBLICATION.md). A avaliação é sintética; o desafio orientou ajustes, sem teste independente. Claude não foi validado com chamadas reais neste projeto.
+Evidências: [API, testes e evals](PHASE1_2_VALIDATION.md), [execução n8n](N8N_VALIDATION.md), [auditoria pré-publicação](PREPUBLICATION.md). As avaliações utilizam dados sintéticos; o desafio orientou correções e não é teste independente. A integração real com Claude **não** foi validada neste projeto.
 
-Referência: [configurar a origem de publicação no GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+Configuração de Pages: [documentação oficial do GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
