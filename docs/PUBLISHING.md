@@ -2,15 +2,11 @@
 
 **Status em 16/11/2026:** repositório público publicado em [pedromfr09/resolveai-ai](https://github.com/pedromfr09/resolveai-ai), branch `main`, commit inicial [`a1025b1`](https://github.com/pedromfr09/resolveai-ai/commit/a1025b17ccefb8391bc2e1f5edf8b075741c2689). A [suíte CI](https://github.com/pedromfr09/resolveai-ai/actions/runs/43981829098) concluiu com sucesso.
 
-## GitHub Pages — ativação pendente
+## GitHub Pages — publicação concluída
 
-O site ainda **não está ativo**. Para ativá-lo:
+**O GitHub confirmou o deploy bem-sucedido** na branch `main`: [execução Pages](https://github.com/pedromfr09/resolveai-ai/actions/runs/43982444681).
 
-1. Abra [Settings → Pages](https://github.com/pedromfr09/resolveai-ai/settings/pages).
-2. Em **Build and deployment → Source**, escolha **Deploy from a branch**.
-3. Selecione a branch **main**, a pasta **/(root)** e clique em **Save**.
-4. Verifique a execução de publicação em [Actions](https://github.com/pedromfr09/resolveai-ai/actions).
-5. Depois de o GitHub confirmar o deploy, abra **https://pedromfr09.github.io/resolveai-ai/**.
+**[Abrir demonstração pública](https://pedromfr09.github.io/resolveai-ai/)**. Conferir manualmente no navegador o carregamento e os controles interativos; o deploy bem-sucedido não substitui um teste visual da página.
 
 O arquivo `index.html` está na raiz e contém CSS, JavaScript e exemplos de triagem pré-calculados, sem chamadas à FastAPI, n8n, CDN ou LLM. O `.nojekyll` impede processamento Jekyll. **Pages não executa a API nem o workflow n8n.**
 
