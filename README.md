@@ -1,5 +1,7 @@
 # ResolveAI — triagem auditável de reclamações com IA assistiva, API e evals
 
+**[Demonstração interativa (GitHub Pages)](https://pedromfr09.github.io/resolveai-ai/)** · [Execução n8n validada](docs/N8N_VALIDATION.md) · [Avaliações e testes](docs/PHASE1_2_VALIDATION.md)
+
 **Projeto independente de portfólio AI Builder.** Simula uma fila de atendimento e transforma reclamações em classificações, prioridades, roteamento e rascunhos **não enviados**. **Não é um sistema oficial, integrado ou afiliado ao iFood.** Todos os tickets, critérios de SLA e políticas são fictícios.
 
 **Resultados locais verificados:** 27 testes; 42/42 categorias no conjunto inicial; 8/8 no desafio após ajuste das regras; n8n 2.48.4 executado pela CLI e pelo editor com quatro tickets e três revisões humanas por execução. O desafio orientou correções e não é validação independente. Claude é opcional e **não foi validado com a API Anthropic neste projeto**.
